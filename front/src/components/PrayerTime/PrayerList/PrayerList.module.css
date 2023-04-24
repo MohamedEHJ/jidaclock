@@ -1,0 +1,15 @@
+.mainDiv {
+  outline: 1px solid red;
+  position: absolute;
+  left: 5%;
+  right: 5%;
+}
+
+.prayerList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  /* You can adjust this value to control the spacing between PrayerDescription components */
+}

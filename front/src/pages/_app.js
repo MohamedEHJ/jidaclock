@@ -1,0 +1,12 @@
+import '@/styles/globals.css'
+
+import dynamic from "next/dynamic";
+import React from "react";
+
+const App = ({ Component, pageProps }) => {
+  return React.createElement(Component, pageProps);
+};
+
+export default dynamic(() => Promise.resolve(App), {
+  ssr: false,
+});
