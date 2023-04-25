@@ -1,31 +1,43 @@
 .roundedDiv {
   position: absolute;
-  bottom: -6px; /* Adjust this value to position the div vertically within the progress bar */
+  bottom: -6px;
+  /* Adjust this value to position the div vertically within the progress bar */
   left: 0;
-  width: 30px; /* Set the width of the rounded div */
-  height: 30px; /* Set the height of the rounded div */
-  background-color: rgb(193, 109, 39); /* Set the background color of the rounded div */
-  border-radius: 50%; /* Set the border radius to make the div rounded */
+  width: 30px;
+  /* Set the width of the rounded div */
+  height: 30px;
+  /* Set the height of the rounded div */
+  background-color: #f4fff8;
+  /* Set the background color of the rounded div */
+  border-radius: 50%;
+  /* Set the border radius to make the div rounded */
 }
 
 .roundedDivGreen {
   /* Styles for the rounded div when currentDayPercentage is greater than prayerPosition[index] */
-  background-color: rgb(123, 183, 123); /* Set the background color to green */
+  background-color: #4d4847;
+  border-width: 1px;
+  border-color: #f4fff8;
+  /* Set the background color to green */
 }
 
-.prayerDescription {
-  position: absolute;
-  bottom: -100px;
-  background-color: rgb(193, 109, 39);
-  border-radius: 10%;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 15px;
-  left: 50%; /* Center the div horizontally */
-  transform: translateX(-50%); /* Move the div left by 50% of its own width to center it */
+.parentDiv {
+  /* position: relative; */
+  width: 100%;
+  height: 100px;
+  /* Set the desired height */
 }
 
-.parentDiv{
+.childDiv {
   position: absolute;
-  background-color: yellow;
+  bottom: 0;
+  width: 20px;
+  /* Set the width of the child divs */
+  height: 20px;
+  /* Set the height of the child divs */
+  background-color: blue;
+  /* Set the desired background color */
+  transform: translateX(-50%);
+  /* Center the child divs horizontally */
 }
+
