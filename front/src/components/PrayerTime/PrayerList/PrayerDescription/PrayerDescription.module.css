@@ -1,10 +1,27 @@
-.background{
-    background-color: cadetblue;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
-}
+/* PrayerDescription.module.css */
 
-.h1{
+.background {
+    padding: 16px;
+    /* Add desired border radius */
+    border-radius: 8px;
+    /* Add desired text alignment */
+    text-align: center;
+  }
+  
+  /* Style for h1 element */
+  .background h1 {
+    /* Add desired font size and margin */
+    font-size: 34px;
+    margin-bottom: 16px;
+  }
+  
+  /* Style for div element */
+  .background div {
+    /* Add desired font size and margin */
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: bold;
 
-}
+  }
+  
+  
