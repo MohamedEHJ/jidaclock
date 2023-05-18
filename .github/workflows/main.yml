@@ -1,8 +1,10 @@
-name: refresh map
+name: scrap mawaqit
 
-on:
-  schedule:
-    - cron: "*/5 * * * *"    #runs at 11:30 UTC everyday
+# on:
+#   schedule:
+#     - cron: "*/5 * * * *"    #runs at 11:30 UTC everyday
+
+on: [workflow_dispatch]
 
 jobs:
   getdataandrefreshmap:
