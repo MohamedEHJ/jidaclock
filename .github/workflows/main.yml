@@ -22,11 +22,11 @@ jobs:
       - name: execute py script
         run: |
           cd back
+          git checkout crongenerated
           python main.py
           git config user.name github-actions
           git config user.email github-actions@github.com
           git fetch 
-          git checkout crongenerated
           git add .
           git commit -m "crongenerated"
           git push
