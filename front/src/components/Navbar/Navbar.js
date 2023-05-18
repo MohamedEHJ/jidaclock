@@ -35,7 +35,7 @@ export default class Navbar extends Component {
           </svg>
           {/* <span>BESOIN D'AIDE</span> */}
           <span>
-            BESOIN D'AIDE: <span className="font-bold">06.72.82.98.77</span>
+            BESOIN D&apos;AIDE: <span className="font-bold">06.72.82.98.77</span>
           </span>
         </button>
 
