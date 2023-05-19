@@ -4,10 +4,10 @@ import PrayerList from "../PrayerList/PrayerList";
 
 // Write a fetcher function to wrap the native fetch function and return the result of a call to url in json format
 
-const ProgressBar = ({ actualTime, prayersPercentage, prayers }) => {
+const ProgressBar = ({ actualTime, prayers }) => {
   const prayerName = ["fajr", "dhuhr", "asr", "maghrib", "isha"];
 
-  const prayerPosition = prayersPercentage.map((prayer) => {
+  const prayerPosition = prayers.map((prayer) => {
     const [hours, minutes] = prayer.split(":");
     const secs = parseInt(hours) * 3600 + parseInt(minutes) * 60;
     return ((secs / 86400) * 100).toFixed(1);
@@ -23,7 +23,7 @@ const ProgressBar = ({ actualTime, prayersPercentage, prayers }) => {
         {/* Iterate over the list of percentage */}
 
         <div className={styles.parentDiv}>
-          {prayersPercentage.map((prayer, index) => (
+          {prayers.map((prayer, index) => (
             <>
               <div
                 className={`${styles.roundedDiv} ${styles.roundedDiv} ${

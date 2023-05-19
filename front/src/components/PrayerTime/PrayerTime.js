@@ -5,17 +5,25 @@ import { useState } from 'react';
 import PrayerList from './PrayerList/PrayerList';
 
 import useSWR from 'swr';
-const fetcher = (url) => fetch(url).then((res) => res.json());
+const fetcher = (url) => fetch(url).then((res) => res.text());
 
 export default function PrayerTime() {
   const [actualTime, setActualTime] = useState(0);
   const [actualDate, setActualDate] = useState(new Date().toLocaleDateString());
 
   // Fetch prayer times from API
-  const { data, error } = useSWR('/api/staticData', fetcher);
+  const { data, error, isLoading } = useSWR('https://raw.githubusercontent.com/MohamedEHJ/jidaclock/crongenerated/back/horraires.csv', fetcher);
+  console.log("data", data)
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
-  const prayersPercentage = data[actualDate];
+
+  const separatedData = data.split('\n');
+  const keyValueDatePrayers = separatedData.reduce((acc, cur) => {
+    const [date, fajr, dhuhr, asr, maghrib, isha] = cur.split(',');
+    acc[date] = [fajr, dhuhr, asr, maghrib, isha];
+    return acc;
+  }, {});
+  console.log("dict", keyValueDatePrayers)
 
   // Update sharedData when onChange event is triggered in component B
   const handleTimeChange = (event) => {
@@ -35,7 +43,7 @@ export default function PrayerTime() {
           onChange={handleTimeChange}
         />
 
-        <ProgressBar className='flex-grow' actualTime={actualTime} prayersPercentage={prayersPercentage} prayers={data[actualDate]}/>
+        <ProgressBar className='flex-grow' actualTime={actualTime}  prayers={keyValueDatePrayers[actualDate]}/>
       </div>
       {/* <div>
         <PrayerList prayers={data[actualDate]}></PrayerList>
