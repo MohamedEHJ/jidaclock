@@ -3,7 +3,7 @@ name: scrap mawaqit
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *"    #runs at 11:30 UTC everyday
+    - cron: "0 */12 * * *"    #runs at 11:30 UTC everyday
 
 
 jobs:
